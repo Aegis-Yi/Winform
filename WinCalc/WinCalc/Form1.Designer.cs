@@ -385,7 +385,7 @@
             // 
             // txtEqual
             // 
-            this.txtEqual.Location = new System.Drawing.Point(424, 644);
+            this.txtEqual.Location = new System.Drawing.Point(426, 644);
             this.txtEqual.Margin = new System.Windows.Forms.Padding(6);
             this.txtEqual.Name = "txtEqual";
             this.txtEqual.Size = new System.Drawing.Size(82, 62);
@@ -396,7 +396,7 @@
             // 
             // txtAdd
             // 
-            this.txtAdd.Location = new System.Drawing.Point(426, 468);
+            this.txtAdd.Location = new System.Drawing.Point(426, 556);
             this.txtAdd.Margin = new System.Windows.Forms.Padding(6);
             this.txtAdd.Name = "txtAdd";
             this.txtAdd.Size = new System.Drawing.Size(82, 62);
@@ -407,7 +407,7 @@
             // 
             // txtSub
             // 
-            this.txtSub.Location = new System.Drawing.Point(426, 556);
+            this.txtSub.Location = new System.Drawing.Point(426, 468);
             this.txtSub.Margin = new System.Windows.Forms.Padding(6);
             this.txtSub.Name = "txtSub";
             this.txtSub.Size = new System.Drawing.Size(82, 62);
@@ -418,7 +418,7 @@
             // 
             // txtDiv
             // 
-            this.txtDiv.Location = new System.Drawing.Point(426, 380);
+            this.txtDiv.Location = new System.Drawing.Point(426, 297);
             this.txtDiv.Margin = new System.Windows.Forms.Padding(6);
             this.txtDiv.Name = "txtDiv";
             this.txtDiv.Size = new System.Drawing.Size(82, 62);
@@ -473,7 +473,7 @@
             // 
             // txtCross
             // 
-            this.txtCross.Location = new System.Drawing.Point(426, 297);
+            this.txtCross.Location = new System.Drawing.Point(426, 380);
             this.txtCross.Margin = new System.Windows.Forms.Padding(6);
             this.txtCross.Name = "txtCross";
             this.txtCross.Size = new System.Drawing.Size(82, 62);

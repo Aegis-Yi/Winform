@@ -113,7 +113,7 @@ namespace WinCalc
 
         private void txtOperat_Click(object sender, EventArgs e)
         {
-            if (bFirst == false && bSecond == true)
+            if (bSecond == true)
             {
                 a = Convert.ToDouble(lblResult.Text);
                 str1 = (sender as Button).Text;
@@ -157,7 +157,7 @@ namespace WinCalc
 
         private void txtDiv_Click(object sender, EventArgs e)
         {
-            if (bFirst == false && bSecond == true)
+            if (bSecond == true)
             {
                 a = Convert.ToDouble(lblResult.Text);
                 str1 = "/";
