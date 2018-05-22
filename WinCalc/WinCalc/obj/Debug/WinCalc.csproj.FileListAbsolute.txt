@@ -1,0 +1,8 @@
+E:\C#程序设计\程序\WinCalc\WinCalc\bin\Debug\WinCalc.exe.config
+E:\C#程序设计\程序\WinCalc\WinCalc\bin\Debug\WinCalc.exe
+E:\C#程序设计\程序\WinCalc\WinCalc\bin\Debug\WinCalc.pdb
+E:\C#程序设计\程序\WinCalc\WinCalc\obj\Debug\WinCalc.FrmCalc.resources
+E:\C#程序设计\程序\WinCalc\WinCalc\obj\Debug\WinCalc.Properties.Resources.resources
+E:\C#程序设计\程序\WinCalc\WinCalc\obj\Debug\WinCalc.csproj.GenerateResource.Cache
+E:\C#程序设计\程序\WinCalc\WinCalc\obj\Debug\WinCalc.exe
+E:\C#程序设计\程序\WinCalc\WinCalc\obj\Debug\WinCalc.pdb
