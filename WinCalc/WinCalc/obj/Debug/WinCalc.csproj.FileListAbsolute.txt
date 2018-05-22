@@ -6,3 +6,14 @@ E:\C#程序设计\程序\WinCalc\WinCalc\obj\Debug\WinCalc.Properties.Resources.
 E:\C#程序设计\程序\WinCalc\WinCalc\obj\Debug\WinCalc.csproj.GenerateResource.Cache
 E:\C#程序设计\程序\WinCalc\WinCalc\obj\Debug\WinCalc.exe
 E:\C#程序设计\程序\WinCalc\WinCalc\obj\Debug\WinCalc.pdb
+C:\Users\13251\source\repos\WinCalc\WinCalc\bin\Debug\WinCalc.exe.config
+C:\Users\13251\source\repos\WinCalc\WinCalc\bin\Debug\WinCalc.exe
+C:\Users\13251\source\repos\WinCalc\WinCalc\bin\Debug\WinCalc.pdb
+C:\Users\13251\source\repos\WinCalc\WinCalc\obj\Debug\WinCalc.csprojAssemblyReference.cache
+C:\Users\13251\source\repos\WinCalc\WinCalc\obj\Debug\WinCalc.FrmCalc.resources
+C:\Users\13251\source\repos\WinCalc\WinCalc\obj\Debug\WinCalc.Properties.Resources.resources
+C:\Users\13251\source\repos\WinCalc\WinCalc\obj\Debug\WinCalc.csproj.GenerateResource.cache
+C:\Users\13251\source\repos\WinCalc\WinCalc\obj\Debug\WinCalc.csproj.CoreCompileInputs.cache
+C:\Users\13251\source\repos\WinCalc\WinCalc\obj\Debug\WinCalc.exe
+C:\Users\13251\source\repos\WinCalc\WinCalc\obj\Debug\WinCalc.pdb
+C:\Users\13251\source\repos\WinCalc\WinCalc\obj\Debug\WinCalc.nature.resources
