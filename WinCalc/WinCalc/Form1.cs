@@ -107,10 +107,7 @@ namespace WinCalc
 
         private void txtClrean_Click(object sender, EventArgs e)
         {
-            if (bFirst == true)
-                return;
-            else
-                lblResult.Text = "0";
+            lblResult.Text = "0";
             bFirst = true;
         }
 
