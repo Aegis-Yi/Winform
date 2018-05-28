@@ -212,5 +212,71 @@ namespace WinCalc
             else
                 lblResult.Text = lblResult.Text.Replace("-", "");
         }
+
+        private void txtMod_Click(object sender, EventArgs e)
+        {
+            if (bSecond == true)
+            {
+                a = Convert.ToDouble(lblResult.Text);
+                b = a / 100;
+                lblResult.Text = Convert.ToString(b);
+            }
+            else
+                return;
+        }
+
+        private void txtRoot_Click(object sender, EventArgs e)
+        {
+            if (bFirst == true)
+                return;
+            a = Convert.ToDouble(lblResult.Text);
+            if (a < 0)
+            {
+                MessageBox.Show("被开方数不能小于0");
+                return;
+            }
+            b = Math.Sqrt(a);
+            lblResult.Text = Convert.ToString(b);
+        }
+
+        private void txtSqrt_Click(object sender, EventArgs e)
+        {
+            if (bFirst == true)
+                return;
+            a = Convert.ToDouble(lblResult.Text);
+            b = Math.Pow(a,2);
+            lblResult.Text = Convert.ToString(b);
+        }
+
+        private void txtDao_Click(object sender, EventArgs e)
+        {
+            if (bFirst == true)
+                return;
+            a = Convert.ToDouble(lblResult.Text);
+            if (a == 0)
+            { MessageBox.Show("被除数不能为0");
+                return;
+            }
+            b = 1/a;
+            lblResult.Text = Convert.ToString(b);
+        }
+
+        private void txtCopy_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetDataObject(lblResult.Text);
+         }
+
+        private void txtPast_Click(object sender, EventArgs e)
+        {
+            lblResult.Text = Clipboard.GetText();
+        }
+
+        private void lblResult_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (e.Button == System.Windows.Forms.MouseButtons.Right)
+            {
+                contextMenuStrip1.Show(Control.MousePosition);
+            }
+        }
     }
 }

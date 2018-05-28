@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblDisp = new System.Windows.Forms.Label();
             this.lblResult = new System.Windows.Forms.Label();
             this.lblMem = new System.Windows.Forms.Label();
@@ -42,8 +43,8 @@
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.关闭ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.编辑EToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.复制ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.粘贴ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.txtCopy = new System.Windows.Forms.ToolStripMenuItem();
+            this.txtPast = new System.Windows.Forms.ToolStripMenuItem();
             this.帮助HToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.属性ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnZero = new System.Windows.Forms.Button();
@@ -70,8 +71,16 @@
             this.txtMclrean = new System.Windows.Forms.Button();
             this.txtCross = new System.Windows.Forms.Button();
             this.txtPOM = new System.Windows.Forms.Button();
+            this.txtMod = new System.Windows.Forms.Button();
+            this.txtRoot = new System.Windows.Forms.Button();
+            this.txtSqrt = new System.Windows.Forms.Button();
+            this.txtDao = new System.Windows.Forms.Button();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.复制ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.粘贴ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             this.mainMenu.SuspendLayout();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblDisp
@@ -98,6 +107,7 @@
             this.lblResult.TabIndex = 1;
             this.lblResult.Text = "1234.56";
             this.lblResult.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblResult.MouseUp += new System.Windows.Forms.MouseEventHandler(this.lblResult_MouseUp);
             // 
             // lblMem
             // 
@@ -133,7 +143,7 @@
             this.mainMenu.Location = new System.Drawing.Point(0, 0);
             this.mainMenu.Name = "mainMenu";
             this.mainMenu.Padding = new System.Windows.Forms.Padding(12, 4, 0, 4);
-            this.mainMenu.Size = new System.Drawing.Size(544, 43);
+            this.mainMenu.Size = new System.Drawing.Size(559, 43);
             this.mainMenu.TabIndex = 4;
             this.mainMenu.Text = "menuStrip1";
             // 
@@ -148,7 +158,7 @@
             this.toolStripMenuItem2,
             this.关闭ToolStripMenuItem});
             this.查看VToolStripMenuItem.Name = "查看VToolStripMenuItem";
-            this.查看VToolStripMenuItem.Size = new System.Drawing.Size(106, 35);
+            this.查看VToolStripMenuItem.Size = new System.Drawing.Size(106, 38);
             this.查看VToolStripMenuItem.Text = "查看(&V)";
             // 
             // 标准ToolStripMenuItem
@@ -195,30 +205,32 @@
             // 编辑EToolStripMenuItem
             // 
             this.编辑EToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.复制ToolStripMenuItem,
-            this.粘贴ToolStripMenuItem});
+            this.txtCopy,
+            this.txtPast});
             this.编辑EToolStripMenuItem.Name = "编辑EToolStripMenuItem";
-            this.编辑EToolStripMenuItem.Size = new System.Drawing.Size(103, 35);
+            this.编辑EToolStripMenuItem.Size = new System.Drawing.Size(103, 38);
             this.编辑EToolStripMenuItem.Text = "编辑(&E)";
             // 
-            // 复制ToolStripMenuItem
+            // txtCopy
             // 
-            this.复制ToolStripMenuItem.Name = "复制ToolStripMenuItem";
-            this.复制ToolStripMenuItem.Size = new System.Drawing.Size(160, 38);
-            this.复制ToolStripMenuItem.Text = "复制";
+            this.txtCopy.Name = "txtCopy";
+            this.txtCopy.Size = new System.Drawing.Size(324, 38);
+            this.txtCopy.Text = "复制";
+            this.txtCopy.Click += new System.EventHandler(this.txtCopy_Click);
             // 
-            // 粘贴ToolStripMenuItem
+            // txtPast
             // 
-            this.粘贴ToolStripMenuItem.Name = "粘贴ToolStripMenuItem";
-            this.粘贴ToolStripMenuItem.Size = new System.Drawing.Size(160, 38);
-            this.粘贴ToolStripMenuItem.Text = "粘贴";
+            this.txtPast.Name = "txtPast";
+            this.txtPast.Size = new System.Drawing.Size(324, 38);
+            this.txtPast.Text = "粘贴";
+            this.txtPast.Click += new System.EventHandler(this.txtPast_Click);
             // 
             // 帮助HToolStripMenuItem
             // 
             this.帮助HToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.属性ToolStripMenuItem});
             this.帮助HToolStripMenuItem.Name = "帮助HToolStripMenuItem";
-            this.帮助HToolStripMenuItem.Size = new System.Drawing.Size(109, 35);
+            this.帮助HToolStripMenuItem.Size = new System.Drawing.Size(109, 38);
             this.帮助HToolStripMenuItem.Text = "帮助(&H)";
             // 
             // 属性ToolStripMenuItem
@@ -230,7 +242,7 @@
             // 
             // btnZero
             // 
-            this.btnZero.Location = new System.Drawing.Point(194, 644);
+            this.btnZero.Location = new System.Drawing.Point(191, 640);
             this.btnZero.Margin = new System.Windows.Forms.Padding(6);
             this.btnZero.Name = "btnZero";
             this.btnZero.Size = new System.Drawing.Size(98, 62);
@@ -241,7 +253,7 @@
             // 
             // btnPoint
             // 
-            this.btnPoint.Location = new System.Drawing.Point(314, 644);
+            this.btnPoint.Location = new System.Drawing.Point(308, 640);
             this.btnPoint.Margin = new System.Windows.Forms.Padding(6);
             this.btnPoint.Name = "btnPoint";
             this.btnPoint.Size = new System.Drawing.Size(98, 62);
@@ -252,7 +264,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(314, 556);
+            this.button3.Location = new System.Drawing.Point(308, 559);
             this.button3.Margin = new System.Windows.Forms.Padding(6);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(98, 62);
@@ -263,7 +275,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(74, 556);
+            this.button4.Location = new System.Drawing.Point(74, 559);
             this.button4.Margin = new System.Windows.Forms.Padding(6);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(98, 62);
@@ -274,7 +286,7 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(194, 556);
+            this.button5.Location = new System.Drawing.Point(191, 559);
             this.button5.Margin = new System.Windows.Forms.Padding(6);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(98, 62);
@@ -285,7 +297,7 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(194, 468);
+            this.button6.Location = new System.Drawing.Point(191, 478);
             this.button6.Margin = new System.Windows.Forms.Padding(6);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(98, 62);
@@ -296,7 +308,7 @@
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(314, 468);
+            this.button7.Location = new System.Drawing.Point(308, 478);
             this.button7.Margin = new System.Windows.Forms.Padding(6);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(98, 62);
@@ -307,7 +319,7 @@
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(74, 468);
+            this.button8.Location = new System.Drawing.Point(74, 478);
             this.button8.Margin = new System.Windows.Forms.Padding(6);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(98, 62);
@@ -318,7 +330,7 @@
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(194, 380);
+            this.button9.Location = new System.Drawing.Point(191, 397);
             this.button9.Margin = new System.Windows.Forms.Padding(6);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(98, 62);
@@ -329,7 +341,7 @@
             // 
             // button10
             // 
-            this.button10.Location = new System.Drawing.Point(314, 380);
+            this.button10.Location = new System.Drawing.Point(308, 397);
             this.button10.Margin = new System.Windows.Forms.Padding(6);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(98, 62);
@@ -341,7 +353,7 @@
             // 
             // button11
             // 
-            this.button11.Location = new System.Drawing.Point(74, 380);
+            this.button11.Location = new System.Drawing.Point(74, 397);
             this.button11.Margin = new System.Windows.Forms.Padding(6);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(98, 62);
@@ -352,7 +364,7 @@
             // 
             // btnBackSpace
             // 
-            this.btnBackSpace.Location = new System.Drawing.Point(74, 297);
+            this.btnBackSpace.Location = new System.Drawing.Point(308, 316);
             this.btnBackSpace.Margin = new System.Windows.Forms.Padding(6);
             this.btnBackSpace.Name = "btnBackSpace";
             this.btnBackSpace.Size = new System.Drawing.Size(98, 62);
@@ -363,7 +375,7 @@
             // 
             // txtAllClean
             // 
-            this.txtAllClean.Location = new System.Drawing.Point(194, 297);
+            this.txtAllClean.Location = new System.Drawing.Point(74, 316);
             this.txtAllClean.Margin = new System.Windows.Forms.Padding(6);
             this.txtAllClean.Name = "txtAllClean";
             this.txtAllClean.Size = new System.Drawing.Size(98, 62);
@@ -374,7 +386,7 @@
             // 
             // txtClrean
             // 
-            this.txtClrean.Location = new System.Drawing.Point(314, 297);
+            this.txtClrean.Location = new System.Drawing.Point(191, 316);
             this.txtClrean.Margin = new System.Windows.Forms.Padding(6);
             this.txtClrean.Name = "txtClrean";
             this.txtClrean.Size = new System.Drawing.Size(98, 62);
@@ -385,7 +397,7 @@
             // 
             // txtEqual
             // 
-            this.txtEqual.Location = new System.Drawing.Point(426, 644);
+            this.txtEqual.Location = new System.Drawing.Point(425, 640);
             this.txtEqual.Margin = new System.Windows.Forms.Padding(6);
             this.txtEqual.Name = "txtEqual";
             this.txtEqual.Size = new System.Drawing.Size(82, 62);
@@ -396,7 +408,7 @@
             // 
             // txtAdd
             // 
-            this.txtAdd.Location = new System.Drawing.Point(426, 556);
+            this.txtAdd.Location = new System.Drawing.Point(425, 559);
             this.txtAdd.Margin = new System.Windows.Forms.Padding(6);
             this.txtAdd.Name = "txtAdd";
             this.txtAdd.Size = new System.Drawing.Size(82, 62);
@@ -407,7 +419,7 @@
             // 
             // txtSub
             // 
-            this.txtSub.Location = new System.Drawing.Point(426, 468);
+            this.txtSub.Location = new System.Drawing.Point(425, 478);
             this.txtSub.Margin = new System.Windows.Forms.Padding(6);
             this.txtSub.Name = "txtSub";
             this.txtSub.Size = new System.Drawing.Size(82, 62);
@@ -418,7 +430,7 @@
             // 
             // txtDiv
             // 
-            this.txtDiv.Location = new System.Drawing.Point(426, 297);
+            this.txtDiv.Location = new System.Drawing.Point(425, 316);
             this.txtDiv.Margin = new System.Windows.Forms.Padding(6);
             this.txtDiv.Name = "txtDiv";
             this.txtDiv.Size = new System.Drawing.Size(82, 62);
@@ -429,7 +441,7 @@
             // 
             // txtMR
             // 
-            this.txtMR.Location = new System.Drawing.Point(74, 214);
+            this.txtMR.Location = new System.Drawing.Point(74, 154);
             this.txtMR.Margin = new System.Windows.Forms.Padding(6);
             this.txtMR.Name = "txtMR";
             this.txtMR.Size = new System.Drawing.Size(98, 62);
@@ -440,7 +452,7 @@
             // 
             // txtMadd
             // 
-            this.txtMadd.Location = new System.Drawing.Point(194, 214);
+            this.txtMadd.Location = new System.Drawing.Point(190, 154);
             this.txtMadd.Margin = new System.Windows.Forms.Padding(6);
             this.txtMadd.Name = "txtMadd";
             this.txtMadd.Size = new System.Drawing.Size(98, 62);
@@ -451,7 +463,7 @@
             // 
             // txtMsub
             // 
-            this.txtMsub.Location = new System.Drawing.Point(314, 214);
+            this.txtMsub.Location = new System.Drawing.Point(306, 154);
             this.txtMsub.Margin = new System.Windows.Forms.Padding(6);
             this.txtMsub.Name = "txtMsub";
             this.txtMsub.Size = new System.Drawing.Size(98, 62);
@@ -462,7 +474,7 @@
             // 
             // txtMclrean
             // 
-            this.txtMclrean.Location = new System.Drawing.Point(424, 214);
+            this.txtMclrean.Location = new System.Drawing.Point(422, 154);
             this.txtMclrean.Margin = new System.Windows.Forms.Padding(6);
             this.txtMclrean.Name = "txtMclrean";
             this.txtMclrean.Size = new System.Drawing.Size(82, 62);
@@ -473,7 +485,7 @@
             // 
             // txtCross
             // 
-            this.txtCross.Location = new System.Drawing.Point(426, 380);
+            this.txtCross.Location = new System.Drawing.Point(426, 397);
             this.txtCross.Margin = new System.Windows.Forms.Padding(6);
             this.txtCross.Name = "txtCross";
             this.txtCross.Size = new System.Drawing.Size(82, 62);
@@ -484,7 +496,7 @@
             // 
             // txtPOM
             // 
-            this.txtPOM.Location = new System.Drawing.Point(74, 644);
+            this.txtPOM.Location = new System.Drawing.Point(74, 640);
             this.txtPOM.Margin = new System.Windows.Forms.Padding(6);
             this.txtPOM.Name = "txtPOM";
             this.txtPOM.Size = new System.Drawing.Size(98, 62);
@@ -493,11 +505,82 @@
             this.txtPOM.UseVisualStyleBackColor = true;
             this.txtPOM.Click += new System.EventHandler(this.txtPOM_Click);
             // 
+            // txtMod
+            // 
+            this.txtMod.Location = new System.Drawing.Point(74, 235);
+            this.txtMod.Margin = new System.Windows.Forms.Padding(6);
+            this.txtMod.Name = "txtMod";
+            this.txtMod.Size = new System.Drawing.Size(98, 62);
+            this.txtMod.TabIndex = 29;
+            this.txtMod.Text = "%";
+            this.txtMod.UseVisualStyleBackColor = true;
+            this.txtMod.Click += new System.EventHandler(this.txtMod_Click);
+            // 
+            // txtRoot
+            // 
+            this.txtRoot.Location = new System.Drawing.Point(191, 235);
+            this.txtRoot.Margin = new System.Windows.Forms.Padding(6);
+            this.txtRoot.Name = "txtRoot";
+            this.txtRoot.Size = new System.Drawing.Size(98, 62);
+            this.txtRoot.TabIndex = 30;
+            this.txtRoot.Text = "√";
+            this.txtRoot.UseVisualStyleBackColor = true;
+            this.txtRoot.Click += new System.EventHandler(this.txtRoot_Click);
+            // 
+            // txtSqrt
+            // 
+            this.txtSqrt.Location = new System.Drawing.Point(308, 235);
+            this.txtSqrt.Margin = new System.Windows.Forms.Padding(6);
+            this.txtSqrt.Name = "txtSqrt";
+            this.txtSqrt.Size = new System.Drawing.Size(98, 62);
+            this.txtSqrt.TabIndex = 31;
+            this.txtSqrt.Text = "x²";
+            this.txtSqrt.UseVisualStyleBackColor = true;
+            this.txtSqrt.Click += new System.EventHandler(this.txtSqrt_Click);
+            // 
+            // txtDao
+            // 
+            this.txtDao.Location = new System.Drawing.Point(425, 235);
+            this.txtDao.Margin = new System.Windows.Forms.Padding(6);
+            this.txtDao.Name = "txtDao";
+            this.txtDao.Size = new System.Drawing.Size(82, 62);
+            this.txtDao.TabIndex = 32;
+            this.txtDao.Text = "1/x";
+            this.txtDao.UseVisualStyleBackColor = true;
+            this.txtDao.Click += new System.EventHandler(this.txtDao_Click);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.复制ToolStripMenuItem1,
+            this.粘贴ToolStripMenuItem1});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(137, 76);
+            // 
+            // 复制ToolStripMenuItem1
+            // 
+            this.复制ToolStripMenuItem1.Name = "复制ToolStripMenuItem1";
+            this.复制ToolStripMenuItem1.Size = new System.Drawing.Size(300, 36);
+            this.复制ToolStripMenuItem1.Text = "复制";
+            this.复制ToolStripMenuItem1.Click += new System.EventHandler(this.txtCopy_Click);
+            // 
+            // 粘贴ToolStripMenuItem1
+            // 
+            this.粘贴ToolStripMenuItem1.Name = "粘贴ToolStripMenuItem1";
+            this.粘贴ToolStripMenuItem1.Size = new System.Drawing.Size(300, 36);
+            this.粘贴ToolStripMenuItem1.Text = "粘贴";
+            this.粘贴ToolStripMenuItem1.Click += new System.EventHandler(this.txtPast_Click);
+            // 
             // FrmCalc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(192F, 192F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(544, 756);
+            this.ClientSize = new System.Drawing.Size(559, 759);
+            this.Controls.Add(this.txtDao);
+            this.Controls.Add(this.txtSqrt);
+            this.Controls.Add(this.txtRoot);
+            this.Controls.Add(this.txtMod);
             this.Controls.Add(this.txtPOM);
             this.Controls.Add(this.txtCross);
             this.Controls.Add(this.txtMclrean);
@@ -538,6 +621,7 @@
             this.panel1.ResumeLayout(false);
             this.mainMenu.ResumeLayout(false);
             this.mainMenu.PerformLayout();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -583,10 +667,17 @@
         private System.Windows.Forms.Button txtMsub;
         private System.Windows.Forms.Button txtMclrean;
         private System.Windows.Forms.Button txtCross;
-        private System.Windows.Forms.ToolStripMenuItem 复制ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 粘贴ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem txtCopy;
+        private System.Windows.Forms.ToolStripMenuItem txtPast;
         private System.Windows.Forms.ToolStripMenuItem 属性ToolStripMenuItem;
         private System.Windows.Forms.Button txtPOM;
+        private System.Windows.Forms.Button txtMod;
+        private System.Windows.Forms.Button txtRoot;
+        private System.Windows.Forms.Button txtSqrt;
+        private System.Windows.Forms.Button txtDao;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem 复制ToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem 粘贴ToolStripMenuItem1;
     }
 }
 
