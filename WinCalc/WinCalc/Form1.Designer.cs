@@ -158,7 +158,7 @@
             this.toolStripMenuItem2,
             this.关闭ToolStripMenuItem});
             this.查看VToolStripMenuItem.Name = "查看VToolStripMenuItem";
-            this.查看VToolStripMenuItem.Size = new System.Drawing.Size(106, 38);
+            this.查看VToolStripMenuItem.Size = new System.Drawing.Size(106, 35);
             this.查看VToolStripMenuItem.Text = "查看(&V)";
             // 
             // 标准ToolStripMenuItem
@@ -208,20 +208,20 @@
             this.txtCopy,
             this.txtPast});
             this.编辑EToolStripMenuItem.Name = "编辑EToolStripMenuItem";
-            this.编辑EToolStripMenuItem.Size = new System.Drawing.Size(103, 38);
+            this.编辑EToolStripMenuItem.Size = new System.Drawing.Size(103, 35);
             this.编辑EToolStripMenuItem.Text = "编辑(&E)";
             // 
             // txtCopy
             // 
             this.txtCopy.Name = "txtCopy";
-            this.txtCopy.Size = new System.Drawing.Size(324, 38);
+            this.txtCopy.Size = new System.Drawing.Size(160, 38);
             this.txtCopy.Text = "复制";
             this.txtCopy.Click += new System.EventHandler(this.txtCopy_Click);
             // 
             // txtPast
             // 
             this.txtPast.Name = "txtPast";
-            this.txtPast.Size = new System.Drawing.Size(324, 38);
+            this.txtPast.Size = new System.Drawing.Size(160, 38);
             this.txtPast.Text = "粘贴";
             this.txtPast.Click += new System.EventHandler(this.txtPast_Click);
             // 
@@ -230,7 +230,7 @@
             this.帮助HToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.属性ToolStripMenuItem});
             this.帮助HToolStripMenuItem.Name = "帮助HToolStripMenuItem";
-            this.帮助HToolStripMenuItem.Size = new System.Drawing.Size(109, 38);
+            this.帮助HToolStripMenuItem.Size = new System.Drawing.Size(109, 35);
             this.帮助HToolStripMenuItem.Text = "帮助(&H)";
             // 
             // 属性ToolStripMenuItem
@@ -556,7 +556,7 @@
             this.复制ToolStripMenuItem1,
             this.粘贴ToolStripMenuItem1});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(137, 76);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(301, 120);
             // 
             // 复制ToolStripMenuItem1
             // 

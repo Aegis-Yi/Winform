@@ -33,7 +33,8 @@ namespace WinCalc
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (bFirst == true) return;
+            if (bFirst == true)
+                return;
             else
                 lblResult.Text = lblResult.Text + "0";
         }
@@ -42,13 +43,13 @@ namespace WinCalc
         {
             if (bFirst == true)
             {
-                lblResult.Text = (sender as Button).Text;
+                    lblResult.Text = (sender as Button).Text;
             }
             else
             {
-                lblResult.Text = lblResult.Text + (sender as Button).Text;
+                if (lblDisp.Text != "")
+                    lblResult.Text = lblResult.Text + (sender as Button).Text;
             }
-            bFirst = false;
         }
 
         private void btnPoint_Click(object sender, EventArgs e)
@@ -116,12 +117,24 @@ namespace WinCalc
             if (bSecond == true)
             {
                 a = Convert.ToDouble(lblResult.Text);
+                lblDisp.Text = lblResult.Text+(sender as Button).Text;
                 str1 = (sender as Button).Text;
-                lblDisp.Text = Convert.ToString(a) + (sender as Button).Text;
                 lblResult.Text = "0";
+            }            
+            if (str1 != "" && bSecond == false)
+            {                
+                b = Convert.ToDouble(lblResult.Text);
+                switch (str1)
+                {
+                    case "+": a += b; break;
+                    case "-": a -= b; break;
+                    case "*": a *= b; break;
+                    case "/": a /= b; break;
+                }
+                str1 = (sender as Button).Text;
+                lblDisp.Text += Convert.ToString(b)+str1;
+                lblResult.Text = Convert.ToString(a);
             }
-            else
-                return;
             bFirst = true;
             bSecond = false;
         }
@@ -164,8 +177,23 @@ namespace WinCalc
                 lblDisp.Text = lblResult.Text + (sender as Button).Text;
                 lblResult.Text = "0";
             }
-            else
-                return;
+
+            if (str1 != "" && bSecond == false)
+            {
+                b = Convert.ToDouble(lblResult.Text);
+                switch (str1)
+                {
+                    case "+": a += b; break;
+                    case "-": a -= b; break;
+                    case "*": a *= b; break;
+                    case "/": a /= b; break;
+                }
+                str1 = (sender as Button).Text;
+                lblDisp.Text += Convert.ToString(b) + str1;
+                lblResult.Text = Convert.ToString(a);
+                if ((sender as Button).Text == "÷")
+                    str1 = "/";
+            }
             bFirst = true;
             bSecond = false;
         }
@@ -244,7 +272,7 @@ namespace WinCalc
             if (bFirst == true)
                 return;
             a = Convert.ToDouble(lblResult.Text);
-            b = Math.Pow(a,2);
+            b = Math.Pow(a, 2);
             lblResult.Text = Convert.ToString(b);
         }
 
@@ -254,26 +282,21 @@ namespace WinCalc
                 return;
             a = Convert.ToDouble(lblResult.Text);
             if (a == 0)
-            { MessageBox.Show("被除数不能为0");
+            {
+                MessageBox.Show("被除数不能为0");
                 return;
             }
-            b = 1/a;
+            b = 1 / a;
             lblResult.Text = Convert.ToString(b);
         }
 
-        private void txtCopy_Click(object sender, EventArgs e)
-        {
-            Clipboard.SetDataObject(lblResult.Text);
-         }
+        private void txtCopy_Click(object sender, EventArgs e) => Clipboard.SetDataObject(lblResult.Text);
 
-        private void txtPast_Click(object sender, EventArgs e)
-        {
-            lblResult.Text = Clipboard.GetText();
-        }
+        private void txtPast_Click(object sender, EventArgs e) => lblResult.Text = Clipboard.GetText();
 
         private void lblResult_MouseUp(object sender, MouseEventArgs e)
         {
-            if (e.Button == System.Windows.Forms.MouseButtons.Right)
+            if (e.Button == MouseButtons.Right)
             {
                 contextMenuStrip1.Show(Control.MousePosition);
             }
