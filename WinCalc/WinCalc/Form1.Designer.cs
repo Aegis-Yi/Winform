@@ -556,19 +556,19 @@
             this.复制ToolStripMenuItem1,
             this.粘贴ToolStripMenuItem1});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(301, 120);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(137, 76);
             // 
             // 复制ToolStripMenuItem1
             // 
             this.复制ToolStripMenuItem1.Name = "复制ToolStripMenuItem1";
-            this.复制ToolStripMenuItem1.Size = new System.Drawing.Size(300, 36);
+            this.复制ToolStripMenuItem1.Size = new System.Drawing.Size(136, 36);
             this.复制ToolStripMenuItem1.Text = "复制";
             this.复制ToolStripMenuItem1.Click += new System.EventHandler(this.txtCopy_Click);
             // 
             // 粘贴ToolStripMenuItem1
             // 
             this.粘贴ToolStripMenuItem1.Name = "粘贴ToolStripMenuItem1";
-            this.粘贴ToolStripMenuItem1.Size = new System.Drawing.Size(300, 36);
+            this.粘贴ToolStripMenuItem1.Size = new System.Drawing.Size(136, 36);
             this.粘贴ToolStripMenuItem1.Text = "粘贴";
             this.粘贴ToolStripMenuItem1.Click += new System.EventHandler(this.txtPast_Click);
             // 
@@ -616,7 +616,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "计算器";
             this.Load += new System.EventHandler(this.FrmCalc_Load);
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmCalc_KeyDown);
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.FrmCalc_KeyPress);
             this.panel1.ResumeLayout(false);
             this.mainMenu.ResumeLayout(false);

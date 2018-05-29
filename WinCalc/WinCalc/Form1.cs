@@ -33,23 +33,19 @@ namespace WinCalc
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (bFirst == true)
-                return;
-            else
+            if (bFirst == false)
                 lblResult.Text = lblResult.Text + "0";
+            else
+                lblResult.Text = Convert.ToString(0);
         }
 
         private void lblNum_Click(object sender, EventArgs e)
         {
             if (bFirst == true)
-            {
-                    lblResult.Text = (sender as Button).Text;
-            }
+                lblResult.Text = (sender as Button).Text;
             else
-            {
-                if (lblDisp.Text != "")
-                    lblResult.Text = lblResult.Text + (sender as Button).Text;
-            }
+                lblResult.Text = lblResult.Text + (sender as Button).Text;
+            bFirst = false;
         }
 
         private void btnPoint_Click(object sender, EventArgs e)
@@ -57,10 +53,6 @@ namespace WinCalc
             if (lblResult.Text.IndexOf(".") < 0)
                 lblResult.Text = lblResult.Text + ".";
             bFirst = false;
-        }
-
-        private void FrmCalc_KeyDown(object sender, KeyEventArgs e)
-        {
         }
 
         private void FrmCalc_KeyPress(object sender, KeyPressEventArgs e)
@@ -81,7 +73,7 @@ namespace WinCalc
 
         private void btnBackSpace_Click(object sender, EventArgs e)
         {
-            if (bFirst == true)
+            if (bSecond == false && bFirst == true) 
                 return;
             string str = lblResult.Text;
             int len = str.Length;
@@ -91,7 +83,14 @@ namespace WinCalc
                 lblResult.Text = "0";
             }
             else
+            {
                 lblResult.Text = str.Substring(0, len - 1);
+                if (lblResult.Text == "-")
+                {
+                    bFirst = true;
+                    lblResult.Text = "0";
+                }
+            }
         }
 
         private void lblDisp_Click(object sender, EventArgs e)
@@ -265,6 +264,8 @@ namespace WinCalc
             }
             b = Math.Sqrt(a);
             lblResult.Text = Convert.ToString(b);
+            bSecond = false;
+            bFirst = true;
         }
 
         private void txtSqrt_Click(object sender, EventArgs e)
@@ -274,6 +275,8 @@ namespace WinCalc
             a = Convert.ToDouble(lblResult.Text);
             b = Math.Pow(a, 2);
             lblResult.Text = Convert.ToString(b);
+            bSecond = false;
+            bFirst = true;
         }
 
         private void txtDao_Click(object sender, EventArgs e)
@@ -288,6 +291,8 @@ namespace WinCalc
             }
             b = 1 / a;
             lblResult.Text = Convert.ToString(b);
+            bSecond = false;
+            bFirst = true;
         }
 
         private void txtCopy_Click(object sender, EventArgs e) => Clipboard.SetDataObject(lblResult.Text);
