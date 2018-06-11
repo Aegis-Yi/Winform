@@ -100,7 +100,7 @@
             this.button3.Text = "C";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.ButClick);
-            this.button3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ButCpsPress);
+            this.button3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ButKeyPress);
             // 
             // button4
             // 
@@ -229,10 +229,9 @@
             this.button15.Name = "button15";
             this.button15.Size = new System.Drawing.Size(79, 78);
             this.button15.TabIndex = 14;
-            this.button15.Text = "caps";
+            this.button15.Text = "Caps";
             this.button15.UseVisualStyleBackColor = true;
             this.button15.Click += new System.EventHandler(this.ButCaps);
-            this.button15.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ButCpsPress);
             // 
             // button16
             // 
@@ -482,7 +481,7 @@
             this.TextDisp.Name = "TextDisp";
             this.TextDisp.Size = new System.Drawing.Size(427, 35);
             this.TextDisp.TabIndex = 37;
-            this.TextDisp.TextChanged += new System.EventHandler(this.TextDisp_TextChanged);
+            this.TextDisp.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // button38
             // 
@@ -490,9 +489,10 @@
             this.button38.Name = "button38";
             this.button38.Size = new System.Drawing.Size(150, 78);
             this.button38.TabIndex = 38;
-            this.button38.Text = "backspace";
+            this.button38.Text = "<---";
             this.button38.UseVisualStyleBackColor = true;
-            this.button38.Click += new System.EventHandler(this.TextBack);
+            this.button38.Click += new System.EventHandler(this.TextBack_Click);
+            this.button38.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ButKeyPress);
             // 
             // Form1
             // 

@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WindowsFormsApp1
@@ -35,46 +28,57 @@ namespace WindowsFormsApp1
                 caps = false;
         }
 
-        private void TextDisp_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void ButKeyPress(object sender, KeyPressEventArgs e)
         {
-            char ch = e.KeyChar;
+            char ch = e.KeyChar;            
             foreach (Control ctl in this.Controls)
             {
                 if (ctl is Button)
                 {
-                    if ((ctl as Button).Text[0] == ch)
+                    if (ch >= 'a' && ch <= 'z')
                     {
-                        (ctl as Button).Focus();
-                        (ctl as Button).PerformClick();
+                        if ((ctl as Button).Text[0] == ch - 32)
+                        {
+                            caps = false;
+                            (ctl as Button).Focus();
+                            (ctl as Button).PerformClick();
+                        }
                     }
+                    else
+                    {
+                        if ((ctl as Button).Text[0] == ch)
+                        {
+                            caps = true;
+                            (ctl as Button).Focus();
+                            (ctl as Button).PerformClick();
+                        }
+                    }                    
                 }
+            }
+            if(e.KeyChar == (char)Keys.Back)
+            {
+                if (TextDisp.Text == "")
+                    return;
+                string str = TextDisp.Text;
+                int len = str.Length;
+                if (len == 1)
+                    TextDisp.Text = "";
+                else
+                    TextDisp.Text = str.Substring(0, len - 1);
             }
         }
 
-        private void ButCpsPress(object sender, KeyPressEventArgs e)
-        {
-            
-        }
-
-        private void TextBack(object sender, EventArgs e)
+        private void TextBack_Click(object sender, EventArgs e)
         {
             if (TextDisp.Text == "")
                 return;
             string str = TextDisp.Text;
             int len = str.Length;
             if (len == 1)
-            {
                 TextDisp.Text = "";
-            }
             else
-            {
                 TextDisp.Text = str.Substring(0, len - 1);
-            }
         }
+
     }
 }
